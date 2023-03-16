@@ -1,5 +1,9 @@
 # Unofficial tap for Input Leap
 
+> **Warning**
+> This formula is currently not intended to be run on Linux and will likely
+> error out!
+
 This is an unofficial tap for [Input
 Leap](https://github.com/input-leap/input-leap), a fork of the
 [Barrier](https://github.com/debauchee/barrier) project from its active
