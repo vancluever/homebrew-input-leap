@@ -5,13 +5,13 @@ class InputLeap < Formula
   version "2.4.0-1+09eebd6"
   license "GPL-2.0-only"
 
-  depends_on "pkg-config" => :build
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on :xcode => :build
+  depends_on "pkg-config" => :build
+  depends_on xcode: :build
   depends_on macos: :sierra
-  depends_on "qt@5"
   depends_on "openssl"
+  depends_on "qt@5"
 
   patch :DATA
 
@@ -19,7 +19,7 @@ class InputLeap < Formula
     ENV["B_BUILD_TYPE"] = "Release"
     ENV["INPUTLEAP_BUILD_ENV"] = "1"
     system "./clean_build.sh"
-    system "rm", "build/bundle/InputLeap.app/Contents/MacOS/guiunittests"
+    rm "build/bundle/InputLeap.app/Contents/MacOS/guiunittests"
     system "codesign", "--deep", "--force", "--sign", "-", "build/bundle/InputLeap.app"
     prefix.install "build/bundle/InputLeap.app"
     bin.install_symlink prefix/"InputLeap.app/Contents/MacOS/input-leapc"
