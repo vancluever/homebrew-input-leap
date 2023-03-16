@@ -38,7 +38,7 @@ install this to `/Applications`.
 
 ```
 You will need to access the InputLeap.app directly from:
-  #{prefix}/InputLeap.app
+  #{opt_prefix}/InputLeap.app
 
 Run this at least once to properly register accessibility
 permissions before using the CLI tools.
@@ -53,4 +53,8 @@ again should then correctly grant it.
 The command-line binaries input-leapc (client) and input-leaps
 (server) have been linked and should be available from your
 PATH.
+
+Man pages have also been installed, and you will be able to find
+config file examples in:
+  #{HOMEBREW_PREFIX}/share/doc/input-leap
 ```
