@@ -14,7 +14,7 @@ without the need for a KVM or USB switch.
 
 As the Input Leap maintainers have been busy working on modernizing the
 codebase, more and more folks seem to be looking for various ways to install it
-ahead of an official re-release. Packing is available on the AUR (see
+ahead of an official re-release. Packaging is available on the AUR (see
 [input-leap-git](https://aur.archlinux.org/packages/input-leap-git) and
 [input-leap-headless-git](https://aur.archlinux.org/packages/input-leap-headless-git)),
 but seemingly not much else.
