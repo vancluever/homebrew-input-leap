@@ -1,9 +1,9 @@
 class InputLeap < Formula
   desc "Open-source KVM software (formerly Barrier)"
   homepage "https://github.com/input-leap/input-leap"
-  url "https://github.com/input-leap/input-leap.git", using: :git, revision: "09eebd619c5858d61e956fdb87f7cfabf7823b86"
-  version "2.4.0-1+09eebd6"
-  license "GPL-2.0-only"
+  url "https://github.com/vancluever/input-leap.git", using: :git, branch: "vancluever-revert-9ad9b3a"
+  version "2.4.0-2+5778643"
+  license :cannot_represent
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
