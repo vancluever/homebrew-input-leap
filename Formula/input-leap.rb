@@ -17,9 +17,9 @@ class InputLeap < Formula
 
   def install
     ENV["B_BUILD_TYPE"] = "Release"
+    ENV["B_CMAKE_FLAGS"] = "-DINPUTLEAP_BUILD_TESTS=OFF"
     ENV["INPUTLEAP_BUILD_ENV"] = "1"
     system "./clean_build.sh"
-    rm "build/bundle/InputLeap.app/Contents/MacOS/guiunittests"
     system "codesign", "--deep", "--force", "--sign", "-", "build/bundle/InputLeap.app"
     prefix.install "build/bundle/InputLeap.app"
     bin.install_symlink prefix/"InputLeap.app/Contents/MacOS/input-leapc"
