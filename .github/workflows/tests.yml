@@ -34,9 +34,3 @@ jobs:
       - run: brew test-bot --only-tap-syntax
 
       - run: brew test-bot --only-formulae --testing-formulae vancluever/input-leap/input-leap
-
-      - name: Save logs
-        uses: actions/upload-artifact@v3
-        with:
-          name: homebrew-input-leap-build-logs
-          path: homebrew-input-leap/logs/input-leap/
