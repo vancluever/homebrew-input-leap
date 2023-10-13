@@ -19,7 +19,7 @@ ahead of an official re-release. Packaging is available on the AUR (see
 [input-leap-headless-git](https://aur.archlinux.org/packages/input-leap-headless-git)),
 but seemingly not much else.
 
-This is a AUR-like tap that will allow you to build and run the Input Leap
+This is an AUR-like tap that will allow you to build and run the Input Leap
 application on MacOS.
 
 ## External Requirements
