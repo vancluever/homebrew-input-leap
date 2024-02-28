@@ -1,8 +1,8 @@
 class InputLeap < Formula
   desc "Open-source KVM software (formerly Barrier)"
   homepage "https://github.com/input-leap/input-leap"
-  url "https://github.com/input-leap/input-leap.git", using: :git, revision: "edaa634551eb530a4ae6eaf1d31d62a72d70c961"
-  version "2.4.0-6+edaa634"
+  url "https://github.com/input-leap/input-leap.git", using: :git, revision: "6cfeacdfa00096cd8bdbecc95a4c1c9dc2cd2113"
+  version "2.4.0-7+6cfeacd"
   license :cannot_represent
 
   depends_on "cmake" => :build
@@ -65,36 +65,12 @@ end
 
 __END__
 diff --git a/dist/macos/bundle/build_dist.sh.in b/dist/macos/bundle/build_dist.sh.in
-index 1dc263c4..d5a43584 100755
+index 55610614..7ac2a247 100755
 --- a/dist/macos/bundle/build_dist.sh.in
 +++ b/dist/macos/bundle/build_dist.sh.in
-@@ -35,39 +35,12 @@ info "Copying binaries into bundle"
- # Copy the folder instead of globbing unquoted path
- cp -r "$B_BINDIR" "$B_MACOS" || exit 1
+@@ -37,19 +37,6 @@ cp -r "$B_BINDIR" "$B_MACOS" || exit 1
  
--# Check for macdeployqt on MacPorts
--if which -s port ; then
--    info "MacPorts found, searching for macdeployqt"
--    DEPLOYQT="$(port contents qt5-qttools | grep --only --max-count 1 '/.*macdeployqt')"
--    if [ ! -x "$DEPLOYQT" ]; then
--        error "Please install package qt5-qttools"
--        exit 1
--    fi
--fi
--
--# Check for macdeployqt on Homebrew
--if which -s brew ; then
--    info "Homebrew found, searching for macdeployqt"
--    DEPLOYQT="$(brew list qt@5 | grep --only '/.*macdeployqt' | head -1)"
--    if [ ! -x "$DEPLOYQT" ]; then
--        error "Please install package qt"
--        exit 1
--    fi
-+DEPLOYQT="$(which macdeployqt)"
-+if [ ! -x "$DEPLOYQT" ]; then
-+    error "Can't find Qt even though it should have been installed. This is likely a bug, please report it."
-+    exit 1
- fi
+ DEPLOYQT=@QT_DEPLOY_TOOL@
  
 -# Use macdeployqt to include libraries and create dmg
 -if [ "$B_BUILDTYPE" = "Release" ]; then
@@ -115,4 +91,3 @@ index 1dc263c4..d5a43584 100755
 +info "Building app bundle"
 +"$DEPLOYQT" InputLeap.app -executable="$B_INPUTLEAPC" -executable="$B_INPUTLEAPS" || exit 1
 +success "Bundle created successfully"
-
