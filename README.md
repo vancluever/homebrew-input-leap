@@ -1,6 +1,6 @@
 # Unofficial tap for Input Leap
 
-> **Warning**
+> [!WARNING]
 > This formula is currently not intended to be run on Linux and will likely
 > error out!
 
