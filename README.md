@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> This repository is no longer maintained! It's suggested that you look the [Input Leap](https://github.com/input-leap/input-leap) repository (and discussions) for the current best way to install on MacOS. Development has progressed significantly since the the last update to this repository, and binary downloads and efforts to cask-ify the forumla now exist.
+
+
 # Unofficial tap for Input Leap
 
 > [!WARNING]
